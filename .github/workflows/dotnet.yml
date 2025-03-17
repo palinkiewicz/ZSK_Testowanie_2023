@@ -22,6 +22,10 @@ jobs:
         dotnet-version: 8.0.x
     - name: Restore dependencies
       run: dotnet restore
+    - uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '3.1.x'
+    - run: dotnet build ZSK_Testowanie_2023
     - name: Build
       run: dotnet build --no-restore
     - name: Test
